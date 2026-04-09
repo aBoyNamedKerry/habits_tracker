@@ -1,0 +1,46 @@
+[tool.ruff.lint]
+select = [
+    # pydocstyle
+    "D",       
+    # Augment the docstring convention pep257
+    # "D203",  this rule is incompatible with D211  
+    "D212",
+    # "D213", this rule is incompatible with D212
+    "D214", 
+    "D215", 
+    "D404", 
+    "D405", 
+    "D406", 
+    "D407", 
+    "D408", 
+    "D409", 
+    "D410", 
+    "D411", 
+    "D413",
+    "D415", 
+    "D416",
+    "D417"
+    ]
+
+[tool.ruff.lint.pydocstyle]
+convention ="pep257"
+
+[tool.ruff.format]
+# really extensive example to look at - https://github.com/cookiecutter/cookiecutter/blob/main/pyproject.toml
+# try to change this - next step
+
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+#
+# This is currently disabled by default, but it is planned for this
+# to be opt-out in the future.
+# docstring-code-format = true   #false
+
+# Set the line length limit used when formatting code snippets in
+# docstrings.
+#
+# This only has an effect when the `docstring-code-format` setting is
+# enabled.
+# docstring-code-line-length = "dynamic"
+
+  

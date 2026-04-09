@@ -1,0 +1,58 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.9
+    hooks:
+    # Run the linter.
+    - id: ruff
+      types_or: [ python, pyi,jupyter ]
+      args: [--fix, --show-fixes]
+    # # Run the formatter.
+    # - id: ruff-format
+    #   types_or: [ python, pyi, jupyter ]
+    #   #args: [--fix ]
+
+  - repo: 'https://github.com/pre-commit/pre-commit-hooks'
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-docstring-first
+      - id: check-json
+      - id: check-xml
+      - id: check-yaml
+      - id: debug-statements
+      - id: detect-private-key
+      # - id: check-merge-conflict
+      # - id: no-commit-to-branch
+      #   args: ['--branch', 'master', '--pattern', '^(?!((hotfix|feature|bug)-[a-zA-Z-]{1,4}-[0-9]{1,4})).*']
+
+  # - repo: 'https://github.com/sqlfluff/sqlfluff'
+  #   rev: 1.4.5
+  #   hooks:
+  #     - id: sqlfluff-lint
+  #       args: ['--dialect', 'ansi']  #ansi is the most common SQL dialect, others are avaliable and documentation is hosted: https://github.com/sqlfluff/sqlfluff
+
+  - repo: 'https://github.com/kynan/nbstripout'
+    rev: 0.8.1
+    hooks:
+      - id: nbstripout
+        args: ['--keep-id']
+        
+  - repo: 'https://github.com/psf/black'
+    rev: 25.1.0
+    hooks:
+    - id: black
+    - id: black-jupyter
+
+  #- repo: 'https://github.com/pycqa/flake8'
+  #rev: 7.1.0
+  #hooks:
+  #- id: flake8
+  #args: ['--ignore=E203,E266,E402,E501,W503,F401,F403', # https://lintlyci.github.io/Flake8Rules/
+  #       '--max-line-length=88',
+  #       '--max-complexity=18',
+  #       '--select=B,C,E,F,W,T4,B9']
+
+  #- repo: https://github.com/lorenzwalthert/precommit
+  #  rev: v0.4.3
+  #  hooks: 
+  #  -   id: style-files

@@ -1,0 +1,9 @@
+ nbstripout
+ black
+ pre-commit
+ pytest
+
+ # external requirements
+ coverage
+ awscli
+ flake8
